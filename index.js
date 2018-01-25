@@ -2,10 +2,10 @@ const lighthouse = require('lighthouse');
 const chromeLauncher = require('chrome-launcher');
 var net = require('net');
 
-const graphitePort = 'your port'; // e.g. '2003'
-const graphiteHost = 'your host'; // e.g. 'carbon.hostedgraphite.com'
-const graphitePath = 'your path'; // e.g. 'lighthouse.performance' or 'your api-key'
-const url = 'your url'; // e.g. 'https://github.com/'
+const graphitePort = '{your port}'; // e.g. '2003' or 2003
+const graphiteHost = '{your host}'; // e.g. 'carbon.hostedgraphite.com'
+const graphitePath = '{your path}'; // e.g. 'lighthouse.performance' or 'your api-key'
+const url = '{your url}'; // e.g. 'https://github.com/'
 const opts = {
   chromeFlags: ['--headless'],
   output: 'json'

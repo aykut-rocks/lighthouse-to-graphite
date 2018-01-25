@@ -8,10 +8,10 @@ feeds lighthouse performance data into graphite
 ## configuration
 complete the missing constant values in the index.js
 ```
-const graphitePort  = 'your port';  // e.g. '2003'
-const graphiteHost  = 'your host';  // e.g. 'carbon.hostedgraphite.com'
-const graphitePath  = 'your path';  // e.g. 'lighthouse.performance' or 'your api-key'
-const url           = 'your url';   // e.g. 'https://github.com/'
+const graphitePort  = '{your port}';  // e.g. '2003' or 2003
+const graphiteHost  = '{your host}';  // e.g. 'carbon.hostedgraphite.com'
+const graphitePath  = '{your path}';  // e.g. 'lighthouse.performance' or 'your api-key'
+const url           = '{your url}';   // e.g. 'https://github.com/'
 
 ```
 ## howto
