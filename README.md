@@ -1,5 +1,5 @@
 # lighthouse to graphite
-feeds lighthouse performance data into graphite
+feeds [lighthouse](https://github.com/GoogleChrome/lighthouse) performance data into [graphite](https://graphiteapp.org/)
 
 ## requirement
 - node.js version 6 or later
