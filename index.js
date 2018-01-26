@@ -12,6 +12,8 @@ const opts = {
 };
 const config = require('lighthouse/lighthouse-core/config/perf.json');
 
+const isBoolean = (value) => 'boolean' === typeof value;
+
 let launchChromeRunLighthouse = (url, opts, config) => {
   return chromeLauncher.launch({chromeFlags: opts.chromeFlags}).then(chrome => {
     opts.port = chrome.port;
@@ -24,7 +26,11 @@ launchChromeRunLighthouse(url, opts, config).then(results => {
   let socket = net.createConnection(graphitePort, graphiteHost, () => {
     let data = [];
     Object.keys(results.audits).forEach((key) => {
-      data.push(graphitePath + '.' + key + ' ' + results.audits[key].rawValue);
+      let value = results.audits[key].rawValue;
+      if(isBoolean(value)) {
+        value = +value;
+      }
+      data.push(graphitePath + '.' + key + ' ' + value);
     });
     socket.write(data.join('\r\n'));
     socket.end();
